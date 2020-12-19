@@ -1,4 +1,4 @@
-Selenium_E-Commerce_E2E
+#Selenium_E-Commerce_E2E
 
 An End to End Script for E-Commerce Website for Registration , Login and Cart Checkout Modules
 
