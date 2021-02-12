@@ -25,7 +25,7 @@ public class dataDriven {
 		ArrayList<String> array = new ArrayList<String>();
 
 		// file input stream
-		FileInputStream fis = new FileInputStream("C:\\Users\\mosta\\git\\Selenium_E-Commerce_E2E\\AutomationTestdata.xlsx");
+		FileInputStream fis = new FileInputStream("C:\\Users\\mosta\\git\\Selenium_E-Commerce_E2E\\excel.xlsx");
 
 		@SuppressWarnings("resource")
 		XSSFWorkbook workbook = new XSSFWorkbook(fis);
@@ -73,9 +73,9 @@ public class dataDriven {
 
 						while (cv.hasNext()) {
 
-							Cell c = cv.next();
+						
 
-							array.add(c.getStringCellValue());
+							array.add(cv.next().getStringCellValue());
 
 						}
 
@@ -94,7 +94,7 @@ public class dataDriven {
 
 		dataDriven d = new dataDriven();
 
-		ArrayList<String> data = d.getData("Register1");
+		ArrayList<String> data = d.getData("Register2");
 
 		System.out.println(data.get(1));
 

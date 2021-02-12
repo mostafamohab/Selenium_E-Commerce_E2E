@@ -29,3 +29,7 @@ Tools and Technologies:
 11- Chromedriver class
 
 12- slf4j Logging Framework
+
+13- Apache POI
+
+14- Rest Assured APIs

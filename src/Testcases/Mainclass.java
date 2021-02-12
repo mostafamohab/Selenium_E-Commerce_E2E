@@ -55,17 +55,17 @@ public class Mainclass {
 		// Create an object from Homepage Class
 		Homepage homepage = new Homepage(driver);
 
+		// create an object from dataDriven class
+		dataDriven d = new dataDriven();
+
+		// create a new arraylist of strings in order to extract test data from excel
+		ArrayList<String> data = d.getData("Signup5");
+
 		// Create an object from javascript executor class
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		// Use java script in order to scroll by mouse till elements appearing
 		js.executeScript("window.scrollBy(0,500)", "");
-
-		// create an object from dataDriven class
-		dataDriven d = new dataDriven();
-
-		// create a new arraylist of strings in order to extract test data from excel
-		ArrayList<String> data = d.getData("Signup1");
 
 		// Click on Sign Up Button
 		homepage.signUp().click();

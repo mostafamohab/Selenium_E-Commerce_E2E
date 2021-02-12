@@ -23,5 +23,6 @@
 			<attribute name="maven.scope" value="test"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/mosta/Downloads/Rest Assured/rest-assured-4.3.3.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
