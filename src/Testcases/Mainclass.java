@@ -2,24 +2,28 @@
 package Testcases;
 
 //Libraries Used
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 import Objects.Blousespage;
 import Objects.CreateAccountpage;
 import Objects.Homepage;
 import Objects.MyAccountpage;
+import Objects.dataDriven;
 
 //Main Class initialization as public class
 public class Mainclass {
@@ -37,7 +41,7 @@ public class Mainclass {
 
 		// Using Implicit wait for all elements as a standard behaviour for script
 		// unless otherwise
-		driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(13, TimeUnit.SECONDS);
 
 		// Enter Website needed in driver credentials
 		driver.get("http://automationpractice.com/index.php");
@@ -47,8 +51,7 @@ public class Mainclass {
 	}
 
 	@Test(priority = 1)
-	public void signUp() {
-
+	public void signUp() throws IOException {
 		// Create an object from Homepage Class
 		Homepage homepage = new Homepage(driver);
 
@@ -58,98 +61,120 @@ public class Mainclass {
 		// Use java script in order to scroll by mouse till elements appearing
 		js.executeScript("window.scrollBy(0,500)", "");
 
+		// create an object from dataDriven class
+		dataDriven d = new dataDriven();
+
+		// create a new arraylist of strings in order to extract test data from excel
+		ArrayList<String> data = d.getData("Signup1");
+
 		// Click on Sign Up Button
-		homepage.Signup().click();
+		homepage.signUp().click();
 
 		// Use java script in order to scroll by mouse till elements appearing
 		js.executeScript("window.scrollBy(0,100)", "");
 
 		// Enter Valid Email Address
-		// Please change this Email as it is a Dummy Data
-		homepage.Emailsignup().sendKeys("Mostafa-Mohab12mmmm@gmail.com");
+		homepage.emailSignup().sendKeys(data.get(1));
+
+		// Create new object of Webdriver wait class for a certain Usage in an
+		// explicit wait
+		WebDriverWait Wait = new WebDriverWait(driver, 6);
+
+		// Use Explicit Wait in order for Mail appearing as valid in Screen
+		Wait.until(ExpectedConditions.elementToBeClickable(homepage.createAccount()));
 
 		// Press Enter Key
-		homepage.Emailsignup().sendKeys(Keys.ENTER);
+		homepage.createAccount().click();
 	}
 
 	@Test(priority = 2)
-	public void createAccount() {
+	public void createAccount() throws IOException {
 		// Create an object from CreateAccountPage Class
 		CreateAccountpage createaccount = new CreateAccountpage(driver);
 
+		// create an object from dataDriven class
+		dataDriven d = new dataDriven();
+
+		// create a new arraylist of strings in order to extract test data from excel
+		ArrayList<String> data = d.getData("Register5");
+
 		// Click on Male Radio Button as a Gender
-		createaccount.Male().click();
+		createaccount.male().click();
 
-		// Enter First Name as Mostafa
-		createaccount.Firstname().sendKeys("mostafa");
+		// Enter First Name
+		createaccount.firstName().sendKeys(data.get(3));
 
-		// Enter Last Name as Mohab
-		createaccount.Lastname().sendKeys("mohab");
+		// Enter Last Name
+		createaccount.lastName().sendKeys(data.get(4));
 
-		// Enter Password as 123456
-		createaccount.Password().sendKeys("123456");
+		// Enter Password
+		createaccount.password().sendKeys(data.get(2));
 
-		// Select Day as 7 from Calendar
-		createaccount.Day().sendKeys("7");
+		// Select Day from Calendar
+		createaccount.day().sendKeys(data.get(5));
 
-		// Select Month as May from Calendar
-		createaccount.Month().sendKeys("May");
+		// Select Month from Calendar
+		createaccount.month().sendKeys(data.get(6));
 
-		// Select Year as 2020
-		createaccount.Year().sendKeys("2020");
+		// Select Year
+		createaccount.year().sendKeys(data.get(7));
 
 		// Click on Sign Up for News Letter Checkbox
-		createaccount.Checkbox1().click();
+		createaccount.checkBox1().click();
 
 		// Click on Recieve Offers Checkbox
-		createaccount.Checkbox2().click();
+		createaccount.checkBox2().click();
 
-		// Enter Company as Codelab
-		createaccount.Company().sendKeys("Codelab");
+		// Enter Company
+		createaccount.company().sendKeys(data.get(8));
 
-		// Enter Address as Cairo,11111,egypt
-		createaccount.Address().sendKeys("Cairo,11111,egypt");
+		// Enter Address
+		createaccount.address().sendKeys(data.get(9));
 
-		// Select City as Cairo
-		createaccount.City().sendKeys("Cairo");
+		// Select City
+		createaccount.city().sendKeys(data.get(10));
 
-		// Select State as California
-		createaccount.State().sendKeys("California");
+		// Select State
+		createaccount.state().sendKeys(data.get(11));
 
-		// Enter Postal Code as 11757
-		createaccount.Postcode().sendKeys("11757");
+		// Enter Postal
+		createaccount.postCode().sendKeys(data.get(12));
 
-		// Enter Additional Information as no other info
-		createaccount.Other().sendKeys("no other info");
+		// Enter Additional Information
+		createaccount.other().sendKeys(data.get(13));
 
-		// Enter Homephone as 0226330123
-		createaccount.Homephone().sendKeys("0226330123");
+		// Enter Homephone
+		createaccount.homePhone().sendKeys(data.get(14));
 
-		// Enter Mobile Number as 01263301234
-		createaccount.Mobilephone().sendKeys("01263301234");
+		// Enter Mobile Number
+		createaccount.mobilePhone().sendKeys(data.get(15));
 
 		// Press on Register Button after filling all required data
-		createaccount.Submit().click();
+		createaccount.submit().click();
 
 		// Click on Sign out Button
-		createaccount.Signout().click();
+		createaccount.signOut().click();
 	}
 
 	@Test(priority = 3)
-	public void signIn() {
-
+	public void signIn() throws IOException {
 		// Create an object from Homepage Class
 		Homepage homepage = new Homepage(driver);
 
+		// create an object from dataDriven class
+		dataDriven d = new dataDriven();
+
+		// create a new arraylist of strings in order to extract test data from excel
+		ArrayList<String> data = d.getData("Login5");
+
 		// Enter Valid Email
-		// Please change this Email as it is a Dummy Data
-		homepage.Emailsignin().sendKeys("Mostafa-Mohab12mmmm@gmail.com");
+		homepage.emailSignin().sendKeys(data.get(1));
 
 		// Enter Valid Password
-		homepage.Passwordsignin().sendKeys("123456");
+		homepage.passwordSignin().sendKeys(data.get(2));
 
 		// Press on Sign in Button
-		homepage.Signin().click();
+		homepage.signIn().click();
 	}
 
 	@Test(priority = 4)
@@ -165,10 +190,10 @@ public class Mainclass {
 		Actions Action = new Actions(driver);
 
 		// Hover on Women Button on Menu
-		Action.moveToElement(myaccount.Women()).perform();
+		Action.moveToElement(myaccount.women()).perform();
 
 		// Click on Blouse Sub Menu under Women Button from Menu Section
-		Action.moveToElement(myaccount.Blouses()).click().perform();
+		Action.moveToElement(myaccount.blouses()).click().perform();
 
 		// Create an object from Blouses Page Class
 		Blousespage blouses = new Blousespage(driver);
@@ -177,16 +202,16 @@ public class Mainclass {
 		js.executeScript("window.scrollBy(0,500)", "");
 
 		// Hover on Item by Mouse Action
-		Action.moveToElement(blouses.Item()).perform();
+		Action.moveToElement(blouses.item()).perform();
 
 		// Hover on Item by Mouse Action and Click on More Button
-		Action.moveToElement(blouses.More()).click().perform();
+		Action.moveToElement(blouses.more()).click().perform();
 
 		// Use java script in order to scroll by mouse till elements appearing
 		js.executeScript("window.scrollBy(0,350)", "");
 
 		// Hover on Add to Cart Button and Click on It
-		Action.moveToElement(blouses.Addtocart()).click().perform();
+		Action.moveToElement(blouses.addtoCart()).click().perform();
 
 	}
 
@@ -207,41 +232,41 @@ public class Mainclass {
 		WebDriverWait Wait = new WebDriverWait(driver, 20);
 
 		// Use Explicit Wait in order for First Checkout button to appear in Screen
-		Wait.until(ExpectedConditions.visibilityOf(blouses.Checkout1()));
+		Wait.until(ExpectedConditions.visibilityOf(blouses.checkOut1()));
 
 		// Move and Click by Mouse on First Checkout Button Element
-		Action.moveToElement(blouses.Checkout1()).click().perform();
+		Action.moveToElement(blouses.checkOut1()).click().perform();
 
 		// Move and Click by Mouse on Second Checkout Button Element
-		Action.moveToElement(blouses.Checkout2()).click().perform();
+		Action.moveToElement(blouses.checkOut2()).click().perform();
 
 		// Use java script in order to scroll by mouse till elements appearing
 		js.executeScript("window.scrollBy(0,500)", "");
 
 		// Move and Click by Mouse on Third Checkout Button Element
-		Action.moveToElement(blouses.Checkout3()).click().perform();
+		Action.moveToElement(blouses.checkOut3()).click().perform();
 
 		// Hover and Click by Mouse on agree to the terms and conditions Checkbox
-		Action.moveToElement(blouses.Checkbox()).click().perform();
+		Action.moveToElement(blouses.checkBox()).click().perform();
 
 		// Use java script in order to scroll by mouse till elements appearing
 		js.executeScript("window.scrollBy(0,500)", "");
 
 		// Hover and Click by Mouse on Check Out Fourth Button (Shipping)
-		Action.moveToElement(blouses.Checkout4()).click().perform();
+		Action.moveToElement(blouses.checkOut4()).click().perform();
 
 		// Use java script in order to scroll by mouse till elements appearing
 		js.executeScript("window.scrollBy(0,500)", "");
 
 		// Hover and Click by Mouse on Pay by Bank Wire Button (Payment)
-		Action.moveToElement(blouses.Bankwire()).click().perform();
+		Action.moveToElement(blouses.bankWire()).click().perform();
 
 		// Use java script in order to scroll by mouse till elements appearing
 		js.executeScript("window.scrollBy(0,500)", "");
 
 		// Hover and Click by Mouse on Confirm Order Button after Choosing payment
 		// Method (Payment)
-		Action.moveToElement(blouses.Confirmorder()).click().perform();
+		Action.moveToElement(blouses.confirmOrder()).click().perform();
 	}
 
 	@Test(priority = 6)
@@ -258,23 +283,23 @@ public class Mainclass {
 
 		// Hover and Click by Mouse on My Account that contains username Label on
 		// upper right corner
-		Action.moveToElement(myaccount.Account()).click().perform();
+		Action.moveToElement(myaccount.account()).click().perform();
 
 		// Use java script in order to scroll by mouse till elements appearing
 		// js.executeScript("window.scrollBy(0,500)", "");
 
 		// Hover and Click by Mouse on Order History and Details Button
-		Action.moveToElement(myaccount.History()).click().perform();
+		Action.moveToElement(myaccount.history()).click().perform();
 
 		// Hover and Click by Mouse on Order Details Button under order reference
 		// table label
-		Action.moveToElement(blouses.Details()).click().perform();
+		Action.moveToElement(blouses.details()).click().perform();
 
 		// Hover and Click by Mouse on Order Details Button
-		Action.moveToElement(blouses.Details2()).click().perform();
+		Action.moveToElement(blouses.details2()).click().perform();
 
 		// Hover on Product Description Field for order history
-		Action.moveToElement(blouses.Productdesc()).perform();
+		Action.moveToElement(blouses.productDesc()).perform();
 
 		// Assertion with JUnit in order to check if order is placed or not and checking
 		// if keyword "placed"
@@ -283,7 +308,7 @@ public class Mainclass {
 		String Expectedproductstatus = "placed";
 		try {
 			// Compare Variable for Order Status with the Status Placed
-			Assert.assertTrue(blouses.Orderplaced().getText().contains(Expectedproductstatus));
+			Assert.assertTrue(blouses.orderPlaced().getText().contains(Expectedproductstatus));
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -294,6 +319,7 @@ public class Mainclass {
 	@AfterSuite
 	public void tearDown() {
 		driver.quit();
+
 	}
 
 }

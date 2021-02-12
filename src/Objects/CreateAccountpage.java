@@ -78,98 +78,98 @@ public class CreateAccountpage {
 	By Signout = By.xpath("//a[@class='logout']");
 
 	// Function that returns xpath for Male Radio Button Field
-	public WebElement Male() {
+	public WebElement male() {
 		return driver.findElement(Male);
 	}
 
 	// Function that returns xpath for First Name Text Field
-	public WebElement Firstname() {
+	public WebElement firstName() {
 		return driver.findElement(Firstname);
 	}
 
 	// Function that returns xpath for Last Name Text Field
-	public WebElement Lastname() {
+	public WebElement lastName() {
 		return driver.findElement(Lastname);
 	}
 
 	// Function that returns xpath for Password Text Field
-	public WebElement Password() {
+	public WebElement password() {
 		return driver.findElement(Password);
 	}
 
 	// Function that returns xpath for Day Drop Down List Field
-	public WebElement Day() {
+	public WebElement day() {
 		return driver.findElement(Day);
 	}
 
 	// Function that returns xpath for Month Drop Down List Field
-	public WebElement Month() {
+	public WebElement month() {
 		return driver.findElement(Month);
 	}
 
 	// Function that returns xpath for Year Drop Down List Field
-	public WebElement Year() {
+	public WebElement year() {
 		return driver.findElement(Year);
 	}
 
 	// Function that returns xpath for Sign Up for News Letter Checkbox
-	public WebElement Checkbox1() {
+	public WebElement checkBox1() {
 		return driver.findElement(Checkbox1);
 	}
 
 	// Function that returns xpath for Recieve Special Offers Checkbox
-	public WebElement Checkbox2() {
+	public WebElement checkBox2() {
 		return driver.findElement(Checkbox2);
 	}
 
 	// Function that returns xpath for Company Text Field
-	public WebElement Company() {
+	public WebElement company() {
 		return driver.findElement(Company);
 	}
 
 	// Function that returns xpath for Address Text Field
-	public WebElement Address() {
+	public WebElement address() {
 		return driver.findElement(Address);
 	}
 
 	// Function that returns xpath for City Text Field
-	public WebElement City() {
+	public WebElement city() {
 		return driver.findElement(City);
 	}
 
 	// Function that returns xpath for State Drop Down List Field
-	public WebElement State() {
+	public WebElement state() {
 		return driver.findElement(State);
 	}
 
 	// Function that returns xpath for Postcode Text Field
-	public WebElement Postcode() {
+	public WebElement postCode() {
 		return driver.findElement(Postcode);
 	}
 
 	// Function that returns xpath for Additional Information Text Field
-	public WebElement Other() {
+	public WebElement other() {
 		return driver.findElement(Other);
 	}
 
 	// Function that returns xpath for Home phone Text Field
-	public WebElement Homephone() {
+	public WebElement homePhone() {
 		return driver.findElement(Homephone);
 	}
 
 	// Function that returns xpath for Mobile phone Text Field
-	public WebElement Mobilephone() {
+	public WebElement mobilePhone() {
 		return driver.findElement(Mobilephone);
 	}
 
 	// Function that returns xpath for Register Button after filling all required
 	// data
-	public WebElement Submit() {
+	public WebElement submit() {
 		return driver.findElement(Submit);
 	}
 
 	// Function that returns xpath for Sign Out button
-	public WebElement Signout() {
+	public WebElement signOut() {
 		return driver.findElement(Signout);
 	}
 }

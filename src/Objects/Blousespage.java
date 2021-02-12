@@ -70,75 +70,75 @@ public class Blousespage {
 	By Orderplaced = By.xpath("//p[@class='dark']");
 
 	// Function that returns xpath for Item
-	public WebElement Item() {
+	public WebElement item() {
 		return driver.findElement(Item);
 	}
 
 	// Function that returns xpath for More Button
-	public WebElement More() {
+	public WebElement more() {
 		return driver.findElement(More);
 	}
 
 	// Function that returns xpath for Add to Cart Button
-	public WebElement Addtocart() {
+	public WebElement addtoCart() {
 		return driver.findElement(Addtocart);
 	}
 
 	// Function that returns xpath for Proceed to Check Out First Button
-	public WebElement Checkout1() {
+	public WebElement checkOut1() {
 		return driver.findElement(Checkout1);
 	}
 
 	// Function that returns xpath for Proceed to Check Out Second Button (Summary)
-	public WebElement Checkout2() {
+	public WebElement checkOut2() {
 		return driver.findElement(Checkout2);
 	}
 
 	// Function that returns xpath for Proceed to Check Out Third Button (Address)
-	public WebElement Checkout3() {
+	public WebElement checkOut3() {
 		return driver.findElement(Checkout3);
 	}
 
 	// Function that returns xpath for agree to the terms and conditions Checkbox
-	public WebElement Checkbox() {
+	public WebElement checkBox() {
 		return driver.findElement(Checkbox);
 	}
 
 	// Function that returns xpath for Check Out Fourth Button (Shipping)
-	public WebElement Checkout4() {
+	public WebElement checkOut4() {
 		return driver.findElement(Checkout4);
 	}
 
 	// Function that returns xpath for Pay by Bank Wire Button (Payment)
-	public WebElement Bankwire() {
+	public WebElement bankWire() {
 		return driver.findElement(Bankwire);
 	}
 
 	// Function that returns xpath for Confirm Order Button after Choosing payment
 	// Method (Payment)
-	public WebElement Confirmorder() {
+	public WebElement confirmOrder() {
 		return driver.findElement(Confirmorder);
 	}
 
 	// Function that returns xpath for Order Details (Plus) Button under order
 	// reference table label
-	public WebElement Details() {
+	public WebElement details() {
 		return driver.findElement(Details);
 	}
 
 	// Function that returns CSS for Product Decription Field content for order
 	// history
-	public WebElement Productdesc() {
+	public WebElement productDesc() {
 		return driver.findElement(Productdesc);
 	}
 
 	// Function that returns xpath for Order Details Button
-	public WebElement Details2() {
+	public WebElement details2() {
 		return driver.findElement(Details2);
 	}
 
 	// Function that returns xpath for Order Status text label
-	public WebElement Orderplaced() {
+	public WebElement orderPlaced() {
 		return driver.findElement(Orderplaced);
 	}
 }

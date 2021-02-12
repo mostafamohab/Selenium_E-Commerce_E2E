@@ -25,6 +25,11 @@ public class Homepage {
 	// Class
 	By Emailsignup = By.xpath("//input[@id='email_create']");
 
+	// Store Xpath for Create account Button Field on an Object of By
+	// Class
+	By Createaccountbutton = By.xpath(
+			"/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/form[1]/div[1]/div[3]/button[1]/span[1]");
+
 	// Store Xpath for Email Text Field above Password Text Field and Sign In Button
 	// on an Object of By
 	// Class
@@ -40,29 +45,35 @@ public class Homepage {
 
 	// Function that returns xpath for Signin button in the Upper Right Corner for
 	// Homepage
-	public WebElement Signup() {
+	public WebElement signUp() {
 		return driver.findElement(Signup);
 	}
 
 	// Function that returns xpath for Email Text Field in Create New Account
 	// Section
-	public WebElement Emailsignup() {
+	public WebElement emailSignup() {
 		return driver.findElement(Emailsignup);
+	}
+
+	// Function that returns xpath for Create Account Button in Create New Account
+	// Section
+	public WebElement createAccount() {
+		return driver.findElement(Createaccountbutton);
 	}
 
 	// Function that returns xpath for Email Text Field above Password Text Field
 	// and Sign In Button
-	public WebElement Emailsignin() {
+	public WebElement emailSignin() {
 		return driver.findElement(Emailsignin);
 	}
 
 	// Function that returns xpath for Password Field above Sign In Button
-	public WebElement Passwordsignin() {
+	public WebElement passwordSignin() {
 		return driver.findElement(Passwordsignin);
 	}
 
 	// Function that returns xpath for Signin button if user is already registered
-	public WebElement Signin() {
+	public WebElement signIn() {
 		return driver.findElement(Signin);
 	}
 }

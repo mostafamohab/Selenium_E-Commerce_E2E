@@ -31,22 +31,22 @@ public class MyAccountpage {
 	By History = By.xpath("//span[contains(text(),'Order history and details')]");
 
 	// Function that returns xpath for Women Button on Menu
-	public WebElement Women() {
+	public WebElement women() {
 		return driver.findElement(Women);
 	}
 
 	// Function that returns xpath for Blouses Submenu Under Women Button on Menu
-	public WebElement Blouses() {
+	public WebElement blouses() {
 		return driver.findElement(Blouses);
 	}
 
 	// Function that returns xpath for My Account containing username Label on upper right corner
-	public WebElement Account() {
+	public WebElement account() {
 		return driver.findElement(Account);
 	}
 
 	// Function that returns xpath for Order History and Details Button
-	public WebElement History() {
+	public WebElement history() {
 		return driver.findElement(History);
 	}
 }
