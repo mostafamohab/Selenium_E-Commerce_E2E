@@ -90,14 +90,4 @@ public class dataDriven {
 
 	}
 
-	public static void main(String[] args) throws IOException {
-
-		dataDriven d = new dataDriven();
-
-		ArrayList<String> data = d.getData("Register2");
-
-		System.out.println(data.get(1));
-
-	}
-
 }
