@@ -90,5 +90,19 @@
 			<version>2.0.0.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>spring-mock-mvc</artifactId>
+			<version>4.3.3</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>spring-web-test-client</artifactId>
+			<version>4.3.3</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 </project>

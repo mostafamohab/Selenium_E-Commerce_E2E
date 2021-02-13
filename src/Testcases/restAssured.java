@@ -1,33 +1,40 @@
 package Testcases;
 
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
-
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
+
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
 
 public class restAssured {
-	@Test
-	public void getTest() {
-		// TODO Auto-generated method stub
-
-		// given if Add Place API is working as expected
+	@BeforeSuite
+	public void setUp() {
 
 		// Given - All input details
 		// When - Submit the API
 		// Then - Validate the Response
-		
-		RestAssured.baseURI = "https://rahulshettyacademy.com";
 
-		given()
-		.log().all().queryParam("Key", "qaclick123").header("Content-Type", "application/json")
-				.body("{\r\n" + "  \"location\": {\r\n" + "    \"lat\": -38.383494,\r\n" + "    \"lng\": 33.427362\r\n"
-						+ "  },\r\n" + "  \"accuracy\": 50,\r\n" + "  \"name\": \"Frontline house\",\r\n"
-						+ "  \"phone_number\": \"(+91) 983 893 3937\",\r\n"
-						+ "  \"address\": \"29, side layout, cohen 09\",\r\n" + "  \"types\": [\r\n"
-						+ "    \"shoe park\",\r\n" + "    \"shop\"\r\n" + "  ],\r\n"
-						+ "  \"website\": \"http://google.com\",\r\n" + "  \"language\": \"French-IN\"\r\n" + "}")
-				.when().post("maps/api/place/add/json").then().log().all().assertThat().statusCode(200)
-				.body("scope", equalTo("APP")).header("Server", "Apache/2.4.18 (Ubuntu)");
+		RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
+	}
+
+	@Test(priority = 7)
+	public void getTest1() {
+		given().log().all().header("Cookie", "__cfduid=de2354a31bda903ee9b1614f176bc71691613051811").when()
+				.get("posts/1").then().log().all().assertThat().statusCode(200)
+				.body("title", equalTo("sunt aut facere repellat provident occaecati excepturi optio reprehenderit"))
+				.header("Server", "cloudflare");
+
+	}
+
+	@Test(priority = 8)
+	public void getTest2() {
+
+		given().log().all().header("Cookie", "__cfduid=de2354a31bda903ee9b1614f176bc71691613051811")
+				.body("{\r\n" + "	\"title\": \"foo\",\r\n" + "    \"body\": \"bar\",\r\n" + "    \"userId\": 1\r\n"
+						+ "}")
+				.when().post("posts").then().log().all().assertThat().statusCode(201).body("body", equalTo(null))
+				.header("Content-Type", "application/json; charset=utf-8");
 
 	}
 
