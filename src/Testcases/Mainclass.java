@@ -59,7 +59,7 @@ public class Mainclass {
 		dataDriven d = new dataDriven();
 
 		// create a new arraylist of strings in order to extract test data from excel
-		ArrayList<String> data = d.getData("Signup5");
+		ArrayList<String> data = d.getData("Signup6");
 
 		// Create an object from javascript executor class
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -96,7 +96,7 @@ public class Mainclass {
 		dataDriven d = new dataDriven();
 
 		// create a new arraylist of strings in order to extract test data from excel
-		ArrayList<String> data = d.getData("Register5");
+		ArrayList<String> data = d.getData("Register6");
 
 		// Click on Male Radio Button as a Gender
 		createaccount.male().click();
@@ -165,7 +165,7 @@ public class Mainclass {
 		dataDriven d = new dataDriven();
 
 		// create a new arraylist of strings in order to extract test data from excel
-		ArrayList<String> data = d.getData("Login5");
+		ArrayList<String> data = d.getData("Login6");
 
 		// Enter Valid Email
 		homepage.emailSignin().sendKeys(data.get(1));
