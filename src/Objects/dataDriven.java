@@ -63,7 +63,7 @@ public class dataDriven {
 					}
 					k++;
 				}
-				System.out.println(coloumn);
+				//System.out.println(coloumn);
 
 				while (rows.hasNext()) {
 					Row rowvalue = rows.next();

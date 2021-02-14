@@ -41,7 +41,7 @@ public class Mainclass {
 
 		// Using Implicit wait for all elements as a standard behaviour for script
 		// unless otherwise
-		driver.manage().timeouts().implicitlyWait(13, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
 
 		// Enter Website needed in driver credentials
 		driver.get("http://automationpractice.com/index.php");
@@ -78,7 +78,7 @@ public class Mainclass {
 
 		// Create new object of Webdriver wait class for a certain Usage in an
 		// explicit wait
-		WebDriverWait Wait = new WebDriverWait(driver, 6);
+		WebDriverWait Wait = new WebDriverWait(driver, 5);
 
 		// Use Explicit Wait in order for Mail appearing as valid in Screen
 		Wait.until(ExpectedConditions.elementToBeClickable(homepage.createAccount()));
@@ -229,7 +229,7 @@ public class Mainclass {
 
 		// Create new object of Webdriver wait class for a certain Usage in an
 		// explicit wait
-		WebDriverWait Wait = new WebDriverWait(driver, 20);
+		WebDriverWait Wait = new WebDriverWait(driver, 17);
 
 		// Use Explicit Wait in order for First Checkout button to appear in Screen
 		Wait.until(ExpectedConditions.visibilityOf(blouses.checkOut1()));

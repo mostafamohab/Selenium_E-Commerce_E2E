@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="178011" started-at="2021-02-14T19:08:15 EET" finished-at="2021-02-14T19:11:13 EET">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="178011" started-at="2021-02-14T19:08:15 EET" finished-at="2021-02-14T19:11:13 EET">
+      <class name="Testcases.Mainclass">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Testcases.Mainclass@548ad73b]" name="setUp" is-config="true" duration-ms="13675" started-at="2021-02-14T19:08:01 EET" finished-at="2021-02-14T19:08:15 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="signUp()[pri:1, instance:Testcases.Mainclass@548ad73b]" name="signUp" duration-ms="12933" started-at="2021-02-14T19:08:15 EET" finished-at="2021-02-14T19:08:28 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signUp -->
+        <test-method status="PASS" signature="createAccount()[pri:2, instance:Testcases.Mainclass@548ad73b]" name="createAccount" duration-ms="36515" started-at="2021-02-14T19:08:28 EET" finished-at="2021-02-14T19:09:05 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAccount -->
+        <test-method status="PASS" signature="signIn()[pri:3, instance:Testcases.Mainclass@548ad73b]" name="signIn" duration-ms="14377" started-at="2021-02-14T19:09:05 EET" finished-at="2021-02-14T19:09:19 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signIn -->
+        <test-method status="PASS" signature="addtoCart()[pri:4, instance:Testcases.Mainclass@548ad73b]" name="addtoCart" duration-ms="23497" started-at="2021-02-14T19:09:19 EET" finished-at="2021-02-14T19:09:43 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addtoCart -->
+        <test-method status="PASS" signature="cartCheckout()[pri:5, instance:Testcases.Mainclass@548ad73b]" name="cartCheckout" duration-ms="64806" started-at="2021-02-14T19:09:43 EET" finished-at="2021-02-14T19:10:47 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cartCheckout -->
+        <test-method status="PASS" signature="checkOrderDetails()[pri:6, instance:Testcases.Mainclass@548ad73b]" name="checkOrderDetails" duration-ms="23363" started-at="2021-02-14T19:10:47 EET" finished-at="2021-02-14T19:11:11 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkOrderDetails -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Testcases.Mainclass@548ad73b]" name="tearDown" is-config="true" duration-ms="647" started-at="2021-02-14T19:11:13 EET" finished-at="2021-02-14T19:11:14 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Testcases.Mainclass -->
+      <class name="Testcases.restAssured">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Testcases.restAssured@4c762604]" name="setUp" is-config="true" duration-ms="357" started-at="2021-02-14T19:08:15 EET" finished-at="2021-02-14T19:08:15 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="getTest1()[pri:7, instance:Testcases.restAssured@4c762604]" name="getTest1" duration-ms="1889" started-at="2021-02-14T19:11:11 EET" finished-at="2021-02-14T19:11:13 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getTest1 -->
+        <test-method status="PASS" signature="getTest2()[pri:8, instance:Testcases.restAssured@4c762604]" name="getTest2" duration-ms="607" started-at="2021-02-14T19:11:13 EET" finished-at="2021-02-14T19:11:13 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getTest2 -->
+      </class> <!-- Testcases.restAssured -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
